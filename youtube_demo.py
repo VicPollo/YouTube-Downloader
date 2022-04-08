@@ -131,7 +131,7 @@ class Window(QMainWindow):
         try:
             self.w_label.setHidden(False)
             video_object = YouTube(self.link.text(), on_complete_callback=self.on_complete, on_progress_callback=self.on_progress)
-            video_object.streams.get_highest_resolution().download(r"C:\Users\victo\Downloads")
+            video_object.streams.get_highest_resolution().download()
         except:
             self.w_label.setHidden(True)
         
@@ -148,7 +148,7 @@ class Window(QMainWindow):
         try:
             self.w_label.setHidden(False)
             audio_object = YouTube(self.link.text(), on_complete_callback=self.on_complete, on_progress_callback=self.on_progress)
-            audio_object.streams.get_audio_only().download(r"C:\Users\victo\Downloads")
+            audio_object.streams.get_audio_only().download()
         except:
             self.w_label.setHidden(True)
     
