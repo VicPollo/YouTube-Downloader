@@ -10,7 +10,7 @@ class Window(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Youtube Downloader")
-        self.setWindowIcon(QIcon("logo.png"))
+        self.setWindowIcon(QIcon("resources/images/logo.png"))
         self.width = 600
         self.height = 450
         self.setGeometry(415, 225, self.width , self.height)
@@ -25,7 +25,7 @@ class Window(QMainWindow):
         head = QLabel("YouTube Downloader", self)
         head.setGeometry(0, 20, 600, 60)
         head.setAlignment(Qt.AlignCenter)
-        font_id = QFontDatabase.addApplicationFont(r"Fuentes/PermanentMarker-Regular.ttf")
+        font_id = QFontDatabase.addApplicationFont(r"resources/fonts/PermanentMarker-Regular.ttf")
         families = QFontDatabase.applicationFontFamilies(font_id)
         font = QFont(families[0], 20)
         head.setFont(font)
@@ -35,7 +35,7 @@ class Window(QMainWindow):
         l_label = QLabel("YouTube Link", self)
         l_label.setGeometry(20, 130, 180, 40)
         l_label.setAlignment(Qt.AlignCenter)
-        font_id = QFontDatabase.addApplicationFont(r"Fuentes/OpenSans.ttf")
+        font_id = QFontDatabase.addApplicationFont(r"resources/fonts/OpenSans.ttf")
         families = QFontDatabase.applicationFontFamilies(font_id)
         font = QFont(families[0], 10)
         l_label.setFont(font)
