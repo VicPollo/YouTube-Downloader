@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "youtube-downloader"
+version = "0.1.0"
+description = "Aplicación para descargar videos de YouTube con Pytube y PyQt5."
+authors = ["Víctor Alberto Martínez <victoralbertomhp@gmail.com>"]
+readme = "README.md"
+packages = [{include = "youtube_downloader"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+PyQt5 = "^5.15.7"
+pytube = "^12.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
