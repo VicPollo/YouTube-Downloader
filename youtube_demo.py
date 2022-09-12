@@ -3,18 +3,18 @@ from threading import *
 from pytube import YouTube
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
-from PyQt5.QtGui import *
+from PyQt5.QtGui import * # Don't import all, it will flood the namespace
 
 
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Youtube Downloader")
-        self.setWindowIcon(QIcon("logo.png"))
-        self.width = 600
-        self.height = 450
-        self.setGeometry(415, 225, self.width , self.height)
-        self.setFixedSize(self.width, self.height)
+        self.setWindowIcon(QIcon("resources/images/logo.png"))
+        width = 1600
+        height = 450
+        self.setGeometry(415, 225, width , height)
+        self.setFixedSize(width, height)
         self.setStyleSheet("background: #EEEEEE;")
         self.Uicomponents()
         self.show()
@@ -24,8 +24,8 @@ class Window(QMainWindow):
         # Header Label
         head = QLabel("YouTube Downloader", self)
         head.setGeometry(0, 20, 600, 60)
-        head.setAlignment(Qt.AlignCenter)
-        font_id = QFontDatabase.addApplicationFont(r"Fuentes/PermanentMarker-Regular.ttf")
+        head.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        font_id = QFontDatabase.addApplicationFont(r"resources/fonts/PermanentMarker-Regular.ttf")
         families = QFontDatabase.applicationFontFamilies(font_id)
         font = QFont(families[0], 20)
         head.setFont(font)
@@ -34,8 +34,8 @@ class Window(QMainWindow):
         # YouTube Link Label
         l_label = QLabel("YouTube Link", self)
         l_label.setGeometry(20, 130, 180, 40)
-        l_label.setAlignment(Qt.AlignCenter)
-        font_id = QFontDatabase.addApplicationFont(r"Fuentes/OpenSans.ttf")
+        l_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        font_id = QFontDatabase.addApplicationFont(r"resources/fonts/OpenSans.ttf")
         families = QFontDatabase.applicationFontFamilies(font_id)
         font = QFont(families[0], 10)
         l_label.setFont(font)
@@ -101,13 +101,13 @@ class Window(QMainWindow):
         self.p_bar = QProgressBar(self)
         self.p_bar.setGeometry(100, 340, 400, 40)
         self.p_bar.setStyleSheet("QProgressBar:chunk { background-color: #FF3737;}")
-        self.p_bar.setAlignment(Qt.AlignCenter)
+        self.p_bar.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
         
         # Waiting Label
         self.w_label = QLabel("Waiting...", self)
         self.w_label.setGeometry(100, 300, 400, 40)
-        self.w_label.setAlignment(Qt.AlignCenter)
+        self.w_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.w_label.setFont(font)
         self.w_label.setHidden(True)
         
